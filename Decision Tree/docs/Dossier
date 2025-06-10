@@ -1,0 +1,28 @@
+/*This document will serve as a to go doc for All basic to intermediate level prep
+for Decision Tree Algorithm.
+
+1. Intuition behind Decision Tree Algorithm
+
+- A decision tree is like a flow chart, which is at each step, you ask a question about the feature
+based on the answer you move down the feature till you reach a final prediction.
+- It splits the data recursively based on the feature that creates the most subsets,using maths
+to decide the best sub-split.
+
+The core concept is to split the data so that each group (leaf) has similar outputs.
+At each step pick the group and value that separates the data into "pure" groups.
+
+2. Maths behind the split
+
+- Either Gini Impurity or Information Gain (Entropy)
+
+Gini Impurity measures how mixed the classes are in a node.
+
+G = 1 - summation(Pi)**2 where Pi is the probability of class i
+
+Entropy:  -summation(Pi log(pi))
+Information Gain = its the decrease in impurity after a split
+Formula: IG = Entropy(parent) - summation(Nk/n). Entropy(child)
+
+3. Assumptions of Decision Tree
+
+

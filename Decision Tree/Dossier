@@ -1,0 +1,156 @@
+/*This document will serve as a to go doc for All basic to intermediate level prep
+for Decision Tree Algorithm.
+
+1. Intuition behind Decision Tree Algorithm
+
+- A decision tree is like a flow chart, which is at each step, you ask a question about the feature
+based on the answer you move down the feature till you reach a final prediction.
+- It splits the data recursively based on the feature that creates the most subsets,using maths
+to decide the best sub-split.
+
+The core concept is to split the data so that each group (leaf) has similar outputs.
+At each step pick the group and value that separates the data into "pure" groups.
+
+2. Maths behind the split
+
+- Either Gini Impurity or Information Gain (Entropy)
+
+Gini Impurity measures how mixed the classes are in a node.
+
+G = 1 - summation(Pi)**2 where Pi is the probability of class i
+
+Entropy:  -summation(Pi log(pi))
+Information Gain = its the decrease in impurity after a split
+Formula: IG = Entropy(parent) - summation(Nk/n). Entropy(child)
+
+3. Assumptions of Decision Tree
+
+-Feature Sufficiency
+-Greedy splits are enough
+-Conditional Independence
+-Axis-Aligned splits
+-leaf homegenity is valuable
+-independently and identically distributed data
+
+4. Python Implementation  # Find, Split, Grow, Stop, Vote
+
+import numpy as np
+import pandas as pd
+
+# Gini Impurity
+def gini_impurity(y):
+    counts =np.bincount(y)
+    probabilities = counts/len(y)
+    return 1 - np.sum(probabilities**2)
+
+# Best Split finder  - find the best split
+
+def best_split(X,y):
+    best_feature,best_threshold,best_gain = None,None,float('inf')
+    n_samples,n_features = X.shape
+
+    for feature in range(n_features):
+        thresholds = np.unique(X[:,feature])
+
+        for threshold in thresholds:
+            left_mask = X[:,feature] <= threshold
+            right_mask = left_mask
+
+            if np.sum(left_mask) == 0 or np.sum(right_mask) == 0:
+                continue
+
+            left_y,right_y = y[left_mask],y[right_mask]
+            left_impurity = gini_impurity(left_y)
+            right_impurity = gini_impurity(right_impurity)
+            weighted_impurity = (len(left_y)*left_impurity+len(right_y)*right_impurity)/len(y)
+
+            if weighted_impurity < best_gain:
+                best_gain = weighted_impurity
+                best_feature = feature
+                best_threshold = threshold
+
+    return best_feature, best_threshold
+
+# 3. NODE CLASS — Holds structure of a node
+class TreeNode:
+    def __init__(self, feature=None, threshold=None, left=None, right=None, *, value=None):
+        self.feature = feature        # Which feature to split on
+        self.threshold = threshold    # Value of feature to split at
+        self.left = left              # Left child
+        self.right = right            # Right child
+        self.value = value            # Predicted class (only for leaf)
+
+# 4. MAJORITY VOTE — Used at the leaf node
+def majority_class(y):
+    """Return the class with majority count."""
+    return Counter(y).most_common(1)[0][0]
+
+# 5. TREE BUILDER — Recursively grows the tree
+def build_tree(X, y, depth=0, max_depth=3):
+    """Recursively build the tree based on best splits."""
+
+    # STOP if pure or max depth reached
+    if len(set(y)) == 1 or depth == max_depth:
+        return TreeNode(value=majority_class(y))
+
+    feature, threshold = best_split(X, y)
+    if feature is None:
+        return TreeNode(value=majority_class(y))
+
+    left_mask = X[:, feature] <= threshold
+    right_mask = ~left_mask
+
+    left = build_tree(X[left_mask], y[left_mask], depth + 1, max_depth)
+    right = build_tree(X[right_mask], y[right_mask], depth + 1, max_depth)
+
+    return TreeNode(feature=feature, threshold=threshold, left=left, right=right)
+
+# 6. PREDICT for a SINGLE SAMPLE
+def predict_single(x, tree):
+    """Predict the class of a single sample x."""
+    if tree.value is not None:
+        return tree.value
+    if x[tree.feature] <= tree.threshold:
+        return predict_single(x, tree.left)
+    else:
+        return predict_single(x, tree.right)
+
+# 7. PREDICT for MULTIPLE SAMPLES
+def predict(X, tree):
+    """Predict for a matrix of samples."""
+    return np.array([predict_single(sample, tree) for sample in X])
+
+5. Major Hyperparameters of Decision Tree
+-max_depth
+-min_samples_split
+-min_samples_leaf
+-max_features
+-criterion
+-splitter
+-class_weight
+-ccp_alpha
+
+6. Evaluation Metrics
+(For Classification)
+- Precision
+- Recall
+- F1 Score
+- ROC-AUC Score
+- Confusion Matrix
+- Log Loss/Entropy
+
+(For Regression)
+- MAE
+- MSE
+- RMSE
+- R-squared
+
+
+
+
+
+
+
+
+
+
