@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a12f163-5d53-4ec6-83db-bdbf5ccd6c3f" name="Changes" comment="Added Dossier - which has details on Decision Tree">
+    <list default="true" id="1a12f163-5d53-4ec6-83db-bdbf5ccd6c3f" name="Changes" comment="Added a simple implementation of the Random Forest model">
+      <change afterPath="$PROJECT_DIR$/Shap Tutorial/Shap Lesson 1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749522900112</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added a simple implementation of the Random Forest model">
+      <option name="closed" value="true" />
+      <created>1749613309795</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1749613309795</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +131,7 @@
     <MESSAGE value="Updated Decision Tree Readme file" />
     <MESSAGE value="Added Model Structure" />
     <MESSAGE value="Added Dossier - which has details on Decision Tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Dossier - which has details on Decision Tree" />
+    <MESSAGE value="Added a simple implementation of the Random Forest model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a simple implementation of the Random Forest model" />
   </component>
 </project>
