@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a12f163-5d53-4ec6-83db-bdbf5ccd6c3f" name="Changes" comment="Added the Implementation of the KNN Algorithm on the Iris dataset &amp; Kaggle Breast Cancer Dataset">
+    <list default="true" id="1a12f163-5d53-4ec6-83db-bdbf5ccd6c3f" name="Changes" comment="Updated the KNN Readme file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KNN Algorithm/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/KNN Algorithm/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +43,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/shrir/PycharmProjects/Supervised-Learning/KNN Algorithm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shrir/PycharmProjects/Supervised-Learning/KNN Algorithm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\shrir\PycharmProjects\Supervised-Learning\KNN Algorithm" />
@@ -139,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749960535544</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updated the KNN Readme file">
+      <option name="closed" value="true" />
+      <created>1749961161066</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1749961161066</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,6 +168,7 @@
     <MESSAGE value="Added a simple implementation of Shap Visualization" />
     <MESSAGE value="Added a Readme doc of Shap Visualization Directory" />
     <MESSAGE value="Added the Implementation of the KNN Algorithm on the Iris dataset &amp; Kaggle Breast Cancer Dataset" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the Implementation of the KNN Algorithm on the Iris dataset &amp; Kaggle Breast Cancer Dataset" />
+    <MESSAGE value="Updated the KNN Readme file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the KNN Readme file" />
   </component>
 </project>
