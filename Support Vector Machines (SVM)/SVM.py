@@ -78,3 +78,40 @@ predictions = multi_svm.predict(X_test)
 
 print("Accuracy:", accuracy_score(y_test, predictions))
 print("Confusion Matrix:\n", confusion_matrix(y_test, predictions))
+
+
+
+from sklearn.decomposition import PCA
+
+# Reduce to 2D for visualization
+pca = PCA(n_components=2)
+X_train_2D = pca.fit_transform(X_train)
+X_test_2D = pca.transform(X_test)
+
+multi_svm_2D = OneVsRestSVM()
+multi_svm_2D.fit(X_train_2D, y_train)
+import matplotlib.pyplot as plt
+
+# Create a grid of points
+x_min, x_max = X_train_2D[:, 0].min() - 1, X_train_2D[:, 0].max() + 1
+y_min, y_max = X_train_2D[:, 1].min() - 1, X_train_2D[:, 1].max() + 1
+xx, yy = np.meshgrid(np.linspace(x_min, x_max, 300),
+                     np.linspace(y_min, y_max, 300))
+
+# Flatten grid and predict
+grid_points = np.c_[xx.ravel(), yy.ravel()]
+Z = multi_svm_2D.predict(grid_points)
+Z = Z.reshape(xx.shape)
+plt.figure(figsize=(10, 6))
+plt.contourf(xx, yy, Z, cmap='Pastel2', alpha=0.7)
+
+# Plot original training points with colors
+scatter = plt.scatter(X_train_2D[:, 0], X_train_2D[:, 1],
+                      c=y_train, cmap='Dark2', edgecolor='k', s=50)
+
+plt.legend(handles=scatter.legend_elements()[0], labels=iris.target_names)
+plt.title("Multiclass SVM Decision Boundaries (PCA Reduced)")
+plt.xlabel("PCA Component 1")
+plt.ylabel("PCA Component 2")
+plt.grid(True)
+plt.show()
