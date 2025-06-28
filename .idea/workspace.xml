@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a12f163-5d53-4ec6-83db-bdbf5ccd6c3f" name="Changes" comment="Implemented the SVM Algorithm in Python">
+    <list default="true" id="1a12f163-5d53-4ec6-83db-bdbf5ccd6c3f" name="Changes" comment="Updated Readme file">
+      <change afterPath="$PROJECT_DIR$/Naive Bayesian Algorithm/Naive Bayesian Algorithm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Support Vector Machines (SVM)/SVM.py" beforeDir="false" afterPath="$PROJECT_DIR$/Support Vector Machines (SVM)/SVM.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +163,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750785121479</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Updated Readme file">
+      <option name="closed" value="true" />
+      <created>1750909483055</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1750909483055</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Updated Readme file">
+      <option name="closed" value="true" />
+      <created>1750909500581</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1750909500581</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -187,6 +203,7 @@
     <MESSAGE value="Added the Implementation of the KNN Algorithm on the Iris dataset &amp; Kaggle Breast Cancer Dataset" />
     <MESSAGE value="Updated the KNN Readme file" />
     <MESSAGE value="Implemented the SVM Algorithm in Python" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented the SVM Algorithm in Python" />
+    <MESSAGE value="Updated Readme file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Readme file" />
   </component>
 </project>
